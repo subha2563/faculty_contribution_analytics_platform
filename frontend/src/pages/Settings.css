@@ -1,0 +1,85 @@
+/* src/pages/Settings.css */
+
+.settings-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.settings-card h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.settings-form .form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.settings-form .form-group {
+  flex: 1; /* Makes inputs take equal width */
+}
+
+/* Specific styling for disabled inputs (like Email) */
+.disabled-input {
+  background-color: #e9ecef !important;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+small {
+  display: block;
+  margin-top: 5px;
+  color: #888;
+  font-size: 12px;
+}
+
+.save-btn {
+  background-color: #0d0d0d;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  background-color: #333;
+}
+
+/* Security Section Styling */
+.danger-zone {
+  border-left: 5px solid #ffc107; /* Yellow accent for security */
+}
+
+.security-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.security-option h4 { margin: 0 0 5px; color: #333; }
+.security-option p { margin: 0; color: #666; font-size: 14px; }
+
+.outline-btn {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.outline-btn:hover {
+  border-color: #333;
+  background-color: #f9f9f9;
+}

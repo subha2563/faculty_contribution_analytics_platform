@@ -1,0 +1,89 @@
+/* src/pages/Upload.css */
+
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header h2 { margin: 0; color: #333; }
+.page-header p { color: #666; margin-top: 5px; }
+
+.upload-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 800px; /* Keeps the form from getting too wide */
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+/* File Upload Box Styling */
+.file-upload-box {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.file-upload-box:hover {
+  border-color: #0d0d0d;
+  background-color: #f0f0f0;
+}
+
+.file-label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.file-hint {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #0d0d0d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #333;
+}

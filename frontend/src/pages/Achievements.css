@@ -1,0 +1,84 @@
+/* src/pages/Achievements.css */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.add-btn {
+  background-color: #0d0d0d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #333;
+}
+
+/* Grid Layout */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Card Styling */
+.achievement-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid transparent; /* Prepare for hover color */
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-top: 4px solid #007bff; /* Blue top border on hover */
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card-content h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.date {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Category Tags */
+.category-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.category-tag.award { color: #d63384; background: #fce4ec; }
+.category-tag.patent { color: #6610f2; background: #e0dbff; }
+.category-tag.certification { color: #007bff; background: #e3f2fd; }
+.category-tag.recognition { color: #fd7e14; background: #ffe8cc; }

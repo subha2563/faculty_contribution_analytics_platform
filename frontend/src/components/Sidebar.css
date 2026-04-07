@@ -1,0 +1,120 @@
+/* Sidebar Container */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  /* White background */
+  color: var(--text-dark);
+  /* Dark text */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  /* Keeps sidebar fixed while scrolling */
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
+  /* Subtle shadow */
+}
+
+/* Header Section */
+.sidebar-header {
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 1px solid #E9EDF7;
+  padding-bottom: 20px;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Navigation Menu */
+.sidebar-nav {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.nav-item {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.nav-item:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.nav-item.active {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(88, 50, 139, 0.3);
+}
+
+/* Footer / Logout Section */
+.sidebar-footer {
+  margin-top: auto;
+  border-top: 1px solid #E9EDF7;
+  padding-top: 20px;
+}
+
+.logout-btn {
+  background: transparent;
+  color: #94A3B8;
+  border: none;
+  padding: 12px 16px;
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.logout-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.logout-btn:hover {
+  background-color: rgba(239, 68, 68, 0.08);
+  /* Soft transparent red */
+  color: #EF4444;
+  /* Bright SaaS red */
+}
