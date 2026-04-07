@@ -9,7 +9,7 @@ const ManageFaculty = () => {
   useEffect(() => {
     const fetchFaculties = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/auth/faculty');
+        const { data } = await axios.get('https://faculty-contribution-analytics-platform.onrender.com/api/auth/faculty');
         setFaculties(data);
       } catch (error) {
         console.error("Error fetching faculties:", error);

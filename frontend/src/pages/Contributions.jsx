@@ -13,7 +13,7 @@ const Contributions = () => {
   useEffect(() => {
     const fetchMyContributions = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/contributions?email=${facultyEmail}`);
+        const { data } = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions?email=${facultyEmail}`);
         setMyPapers(data);
         setLoading(false);
       } catch (error) {
@@ -30,7 +30,7 @@ const Contributions = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this submission?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/contributions/${id}`);
+        await axios.delete(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions/${id}`);
         setMyPapers(prev => prev.filter(paper => paper._id !== id));
       } catch (error) {
         console.error("Error deleting contribution:", error);
@@ -81,7 +81,7 @@ const Contributions = () => {
 
                         <td style={{ padding: '16px 0', borderBottom: '1px solid #F4F7FE', fontSize: '14px', color: '#1B2559' }}>
                           {paper.documentPath ? (
-                            <a href={`http://localhost:5000/uploads/${paper.documentPath}`} target="_blank" rel="noreferrer" style={{ color: '#3B82F6', textDecoration: 'none', fontWeight: '500' }}>
+                            <a href={`https://faculty-contribution-analytics-platform.onrender.com/uploads/${paper.documentPath}`} target="_blank" rel="noreferrer" style={{ color: '#3B82F6', textDecoration: 'none', fontWeight: '500' }}>
                               📄 View PDF
                             </a>
                           ) : (

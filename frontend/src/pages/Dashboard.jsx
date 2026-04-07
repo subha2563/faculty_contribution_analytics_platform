@@ -29,14 +29,14 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/contributions?email=${facultyEmail}`);
+        const { data } = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions?email=${facultyEmail}`);
         setContributions(data);
 
         const approvedCount = data.filter(paper => paper.status === 'Approved').length;
         const pendingCount = data.filter(paper => paper.status === 'Pending').length;
 
         try {
-          const statsRes = await axios.get('http://localhost:5000/api/contributions/me/stats');
+          const statsRes = await axios.get('https://faculty-contribution-analytics-platform.onrender.com/api/contributions/me/stats');
           setStats(statsRes.data);
         } catch (statsError) {
           console.error("Error fetching me/stats:", statsError);
@@ -46,7 +46,7 @@ const Dashboard = () => {
 
         // Gamification Fetch
         try {
-          const pointsRes = await axios.get('http://localhost:5000/api/contributions/analytics/points', {
+          const pointsRes = await axios.get('https://faculty-contribution-analytics-platform.onrender.com/api/contributions/analytics/points', {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
           });
           
@@ -64,7 +64,7 @@ const Dashboard = () => {
             history: pointsRes.data.history || []
           });
 
-          const monthlyRes = await axios.get('http://localhost:5000/api/contributions/analytics/monthly', {
+          const monthlyRes = await axios.get('https://faculty-contribution-analytics-platform.onrender.com/api/contributions/analytics/monthly', {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
           });
           const allMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

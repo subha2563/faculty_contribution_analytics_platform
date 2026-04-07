@@ -41,7 +41,7 @@ const HodDashboard = () => {
   const fetchData = async () => {
     try {
       const dept = localStorage.getItem('department') || 'CSE';
-      const { data } = await axios.get(`http://localhost:5000/api/contributions?role=HOD&department=${dept}`);
+      const { data } = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions?role=HOD&department=${dept}`);
       setAllSubmissions(data);
 
       const pending = data.filter(item => item.status === 'Pending');
@@ -65,7 +65,7 @@ const HodDashboard = () => {
 
       // Fetch ComposedChart Data
       try {
-        const chartRes = await axios.get(`http://localhost:5000/api/contributions/hod/chart-data`);
+        const chartRes = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions/hod/chart-data`);
         setChartData(chartRes.data || []);
       } catch (chartError) {
         console.error("Error fetching HOD chart:", chartError);
@@ -73,7 +73,7 @@ const HodDashboard = () => {
 
       // Fetch Leaderboard Data
       try {
-        const leaderboardRes = await axios.get(`http://localhost:5000/api/contributions/hod/leaderboard`);
+        const leaderboardRes = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions/hod/leaderboard`);
         setLeaderboard(leaderboardRes.data || []);
       } catch (leaderboardError) {
         console.error("Error fetching HOD leaderboard:", leaderboardError);
@@ -81,7 +81,7 @@ const HodDashboard = () => {
 
       // Fetch College-Wide Leaderboard Data
       try {
-        const collegeRes = await axios.get(`http://localhost:5000/api/contributions/analytics/college-averages`);
+        const collegeRes = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions/analytics/college-averages`);
         setCollegeLeaderboard(collegeRes.data || []);
       } catch (collegeError) {
         console.error("Error fetching College averages:", collegeError);
@@ -89,7 +89,7 @@ const HodDashboard = () => {
 
       // Fetch Department Basic Stats
       try {
-        const statsRes = await axios.get(`http://localhost:5000/api/contributions/hod/stats`);
+        const statsRes = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions/hod/stats`);
         setDeptStats(statsRes.data);
       } catch (statsError) {
         console.error("Error fetching HOD stats:", statsError);
@@ -97,7 +97,7 @@ const HodDashboard = () => {
 
       // Fetch Total Registered Faculty
       try {
-        const facultyRes = await axios.get(`http://localhost:5000/api/auth/faculty`);
+        const facultyRes = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/auth/faculty`);
         setTotalFaculty(facultyRes.data.length);
       } catch (facultyError) {
         console.error("Error fetching total faculty count:", facultyError);
@@ -129,7 +129,7 @@ const HodDashboard = () => {
         prev.filter(sub => sub._id !== id)
       );
 
-      await axios.put(`http://localhost:5000/api/contributions/${id}`, { status: newStatus, multiplier: selectedMultiplier, rejectionReason });
+      await axios.put(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions/${id}`, { status: newStatus, multiplier: selectedMultiplier, rejectionReason });
       fetchData(); // Refresh stats and charts silently in the background
     } catch (error) {
       console.error("Error updating status:", error);
@@ -394,7 +394,7 @@ const HodDashboard = () => {
                         <td style={{ padding: '16px' }}>
                           {sub.documentPath ? (
                             <a
-                              href={`http://localhost:5000/uploads/${sub.documentPath}`}
+                              href={`https://faculty-contribution-analytics-platform.onrender.com/uploads/${sub.documentPath}`}
                               target="_blank"
                               rel="noreferrer"
                               style={{ color: '#0d6efd', textDecoration: 'none', fontWeight: '500' }}

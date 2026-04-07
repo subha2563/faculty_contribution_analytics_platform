@@ -31,7 +31,7 @@ const Upload = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/auth/faculty', {
+        const res = await axios.get('https://faculty-contribution-analytics-platform.onrender.com/api/auth/faculty', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setAllFaculty(res.data);
@@ -109,7 +109,7 @@ const Upload = () => {
     if (selectedFile) data.append('file', selectedFile);
 
     try {
-      await axios.post('http://localhost:5000/api/contributions', data, {
+      await axios.post('https://faculty-contribution-analytics-platform.onrender.com/api/contributions', data, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

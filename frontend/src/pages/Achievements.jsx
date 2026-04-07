@@ -12,7 +12,7 @@ const Achievements = () => {
     const fetchData = async () => {
       try {
         const facultyEmail = localStorage.getItem('facultyEmail');
-        const res = await axios.get(`http://localhost:5000/api/contributions?email=${facultyEmail}`);
+        const res = await axios.get(`https://faculty-contribution-analytics-platform.onrender.com/api/contributions?email=${facultyEmail}`);
         setContributions(res.data);
 
         const calculatedLivePoints = res.data
